@@ -1,3 +1,4 @@
-# atividade_intro_PHP
+# atividade_aulas-PHP
 
-Atividade desenvolvida durante a aula de Introdução ao PHP da DIO.
+Atividade desenvolvida durante as aulas de Introdução ao PHP e de Formulários com condicionais e sessões com PHP da DIO.
+
