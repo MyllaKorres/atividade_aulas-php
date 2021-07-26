@@ -1,3 +1,7 @@
+<?php 
+    session_start();
+?>
+
 <!DOCTYPE html>
 
 <html>
@@ -7,7 +11,7 @@
     <title>FORMULÁRIO DE INSCRIÇÃO</title>
     <meta name="author" content="">
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, inicial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body>
@@ -24,6 +28,23 @@
 
 	<p>FORMULÁRIO PARA COMPETIÇÃO DE COMPETIDORES</p>
 	<form action="script.php" method="post">
+	
+		<?php 
+            // isset() verifica se a variável foi iniciada
+            
+		    $error = isset($_SESSION['mensagem-de-erro']) ? $_SESSION['mensagem-de-erro'] : '';
+		    if(!empty($error))
+		    {
+		      echo $error;
+		    }
+		    
+		    $success = isset($_SESSION['mensagem-de-sucesso']) ? $_SESSION['mensagem-de-sucesso'] : '';
+		    if(!empty($success))
+		    {
+		        echo $success;
+		    }
+		?>
+		
 		<p>Nome: <input type="text" name="nome" /></p>
 		<p>Idade: <input type="text" name="idade" /></p>
 		<p><input type="submit" value="Enviar dados do competidor" style="margin-left:45px"/></p>
