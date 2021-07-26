@@ -1,5 +1,5 @@
 <?php 
-    session_start();
+    include "servi√ßos/session_message.php";
 ?>
 
 <!DOCTYPE html>
@@ -8,7 +8,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>FORMUL¡RIO DE INSCRI«√O</title>
+    <title>FORMUL√ÅRIO DE INSCRI√á√ÉO</title>
     <meta name="author" content="">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,27 +18,27 @@
 
 <!--
 
-     AULA - FORMUL¡RIOS COM CONDICIONAIS E SESS’ES COM PHP
+     AULA - FORMUL√ÅRIOS COM CONDICIONAIS E SESS√ïES COM PHP
      
-     CRIE UM FORMUL¡RIO PARA QUE O USU¡RIO POSSA ATRAV…S DE UMA P¡GINA WEB PREENCHER O NOME E A
-     IDADE DOS COMPETIDORES. ESSES DADOS DEVER√O SER UTILIZADOS PARA EXIBIR EM QUAL CATEGORIA O
+     CRIE UM FORMUL√ÅRIO PARA QUE O USU√ÅRIO POSSA ATRAV√âS DE UMA P√ÅGINA WEB PREENCHER O NOME E A
+     IDADE DOS COMPETIDORES. ESSES DADOS DEVER√ÉO SER UTILIZADOS PARA EXIBIR EM QUAL CATEGORIA O
      COMPETIDOR SE ENCAIXA (INFANTIL, ADOLESCENTE OU ADULTO).
  
  -->
 
-	<p>FORMUL¡RIO PARA COMPETI«√O DE COMPETIDORES</p>
+	<h3>FORMUL√ÅRIO PARA COMPETI√á√ÉO DE NATA√á√ÉO</h3>
 	<form action="script.php" method="post">
 	
 		<?php 
-            // isset() verifica se a vari·vel foi iniciada
+            // isset() verifica se a vari√°vel foi iniciada
             
-		    $error = isset($_SESSION['mensagem-de-erro']) ? $_SESSION['mensagem-de-erro'] : '';
+		    $error = get_error();
 		    if(!empty($error))
 		    {
 		      echo $error;
 		    }
 		    
-		    $success = isset($_SESSION['mensagem-de-sucesso']) ? $_SESSION['mensagem-de-sucesso'] : '';
+		    $success = get_success();
 		    if(!empty($success))
 		    {
 		        echo $success;
